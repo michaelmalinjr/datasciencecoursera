@@ -1,18 +1,18 @@
 
-README for Getting and Cleaning Data Course Project Code <br>
-Version 1.0<br>
-Author: Michael Malin Jr<br>
-Date: 08/23/2014<br><br>
+--README for Getting and Cleaning Data Course Project Code <br>
+--Version 1.0<br>
+--Author: Michael Malin Jr<br>
+--Date: 08/23/2014<br><br>
 
 
-Purpose of the course project is to perform the following:<br>
+-Purpose of the course project is to perform the following:<br>
 1. Merges the training and the test sets to create one data set.<br>
 2. Extracts only the measurements on the mean and standard deviation for each measurement. <br>
 3. Uses descriptive activity names to name the activities in the data set<br>
 4. Appropriately labels the data set with descriptive variable names.<br> 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. <br>
 
-Below is a description of the steps performed in the run_analysis.R script  to answer the questions above.<br>
+-Below is a description of the steps performed in the run_analysis.R script  to answer the questions above.<br>
 
 --Step 1: <br>
 -Download the following data to your computer.<br>
@@ -34,4 +34,32 @@ subjectTrainData <- read.table(".\\UCI HAR Dataset\\train\\subject_train.txt")<b
 -Read feature and activity files<br>
 featuresFile <- read.table(".\\UCI HAR Dataset\\features.txt")<br>
 activityFile <- read.table(".\\UCI HAR Dataset\\activity_labels.txt")<br>
+
+-Next, add column names to your test/train data sets by using the data stored in your features.txt and activity_labels.txt files.<br>
+
+colnames(xtestData) = featuresFile[,2]<br>
+colnames(xtrainData) = featuresFile[,2]<br>
+colnames(ytestData) = "ActivityID"<br>
+colnames(ytrainData) = "ActivityID"<br>
+colnames(subjectTestData) = "SubjectID"<br>
+colnames(subjectTrainData) = "SubjectID"<br>
+colnames(activityFile) = c("ActivityID", "ActivityLabels")<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
