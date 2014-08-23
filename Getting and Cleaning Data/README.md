@@ -14,3 +14,8 @@ Purpose of the course project is to perform the following:
 
 Below is a description of the steps performed in the run_analysis.R script  to answer the questions above.
 Step 1: 
+Download the following data to your computer.
+<br>
+Data located at: <br>
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+<br>
