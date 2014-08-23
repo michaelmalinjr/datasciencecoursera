@@ -12,5 +12,5 @@ Purpose of the course project is to perform the following:
 4. Appropriately labels the data set with descriptive variable names. 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-Below is a description of the steps performed in the run_analysis.R script  to answer the questions above.
+Below is a description of the steps performed in the run_analysis.R script  to answer the questions above.<br>
 Step 1: 
