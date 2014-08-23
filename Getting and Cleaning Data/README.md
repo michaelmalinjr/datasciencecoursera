@@ -15,7 +15,7 @@
 
 #### Below is a description of the steps performed in the run_analysis.R script  to answer the questions above.<br>
 
-#### Step 1: Read files into Rstudio and Merges the training and the test sets to create one data set<br>
+#### Step 1: Read files into Rstudio and Merges the training and the test sets to create one data set.<br>
 - Download the following data to your computer.<br>
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip <br>
 
