@@ -1,10 +1,9 @@
-==================================================================
-README for Getting and Cleaning Data Course Project Code
-Version 1.0
-==================================================================
-Author: Michael Malin Jr
-Date: 08/23/2014
-==================================================================
+
+README for Getting and Cleaning Data Course Project Code <br>
+Version 1.0<br>
+Author: Michael Malin Jr<br>
+Date: 08/23/2014<br><br>
+
 
 Purpose of the course project is to perform the following:<br>
 1. Merges the training and the test sets to create one data set.<br>
