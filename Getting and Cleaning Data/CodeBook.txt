@@ -1,0 +1,162 @@
+Code Book for Getting and Cleaning Data Course Project Code
+File Name: run_analysis.R
+
+Column Name = SubjectID
+Contains = ID number of the subject involved in the test
+
+Column Name = ActivityID
+Contains = The name of the activity performed during the test
+
+Column Name Description = The Mean of the Body Acceleration Time
+time-BodyAcceleration-Mean-X  
+time-BodyAcceleration-Mean-Y
+time-BodyAcceleration-Mean-Z
+
+Column Name Description = The Mean of the Gravity Acceleration Time
+time-GravityAcceleration-Mean-X
+time-GravityAcceleration-Mean-Y
+time-GravityAcceleration-Mean-Z
+
+Column Name Description = The Mean of the Body Acceleration Jerk Time
+time-BodyAccelerationJerk-Mean-X
+time-BodyAccelerationJerk-Mean-Y
+time-BodyAccelerationJerk-Mean-Z
+
+Column Name Description = The Mean of the Body Gyroscope Time
+time-BodyGyroscope-Mean-X
+time-BodyGyroscope-Mean-Y
+time-BodyGyroscope-Mean-Z
+
+Column Name Description = The Mean of the Body Gyroscope Jerk Time
+time-BodyGyroscopeJerk-Mean-X
+time-BodyGyroscopeJerk-Mean-Y
+time-BodyGyroscopeJerk-Mean-Z
+
+Column Name Description = The Mean of the Body Acceleration Magnitude Time
+time-BodyAccelerationMagnitude-Mean
+
+Column Name Description = The Mean of the Gravity Acceleration Magnitude Time
+time-GravityAccelerationMagnitude-Mean
+
+Column Name Description = The Mean of the Body Acceleration Jerk Magnitude Time
+time-BodyAccelerationJerkMagnitude-Mean
+
+Column Name Description = The Mean of the Body Gyroscope Magnitude Time
+time-BodyGyroscopeMagnitude-Mean
+
+Column Name Description = The Mean of the Body Gyroscope Jerk Magnitude Time
+time-BodyGyroscopeJerkMagnitude-Mean
+
+Column Name Description = The Mean of the Body Acceleration Frequency
+freq-BodyAcceleration-Mean-X
+freq-BodyAcceleration-Mean-Y
+freq-BodyAcceleration-Mean-Z
+
+Column Name Description = The Mean of the Body Acceleration Jerk Frequency
+freq-BodyAccelerationJerk-Mean-X
+freq-BodyAccelerationJerk-Mean-Y
+freq-BodyAccelerationJerk-Mean-Z
+
+Column Name Description = The Mean of the Body Gyroscope Frequency
+freq-BodyGyroscope-Mean-X
+freq-BodyGyroscope-Mean-Y
+freq-BodyGyroscope-Mean-Z
+
+Column Name Description = The Mean of the Body Acceleration Magnitude Frequency
+freq-BodyAccelerationMagnitude-Mean
+
+Column Name Description = The Mean of the Body Acceleration Jerk Magnitude Frequency
+freq-BodyAccelerationJerkMagnitude-Mean
+
+Column Name Description = The Mean of the Body Gyroscope Magnitude Frequency
+freq-BodyGyroscopeMagnitude-Mean
+
+Column Name Description = The Mean of the Body Gyroscope Jerk Magnitude Frequency
+freq-BodyGyroscopeJerkMagnitude-Mean
+
+Column Name Description = The StdDev of the  Body Acceleration Time
+time-BodyAcceleration-StdDev-X
+time-BodyAcceleration-StdDev-Y
+time-BodyAcceleration-StdDev-Z
+
+Column Name Description = The StdDev of the Gravity Acceleration Time
+time-GravityAcceleration-StdDev-X
+time-GravityAcceleration-StdDev-Y
+time-GravityAcceleration-StdDev-Z
+
+Column Name Description = The StdDev of the Body Acceleration Jerk Time
+time-BodyAccelerationJerk-StdDev-X
+time-BodyAccelerationJerk-StdDev-Y
+time-BodyAccelerationJerk-StdDev-Z
+
+Column Name Description = The StdDev of the Body Gyroscope Time
+time-BodyGyroscope-StdDev-X
+time-BodyGyroscope-StdDev-Y
+time-BodyGyroscope-StdDev-Z
+
+Column Name Description = The StdDev of the Body Gyroscope Jerk Time
+time-BodyGyroscopeJerk-StdDev-X
+time-BodyGyroscopeJerk-StdDev-Y
+time-BodyGyroscopeJerk-StdDev-Z
+
+Column Name Description = The StdDev of the Body Acceleration Magnitude Time
+time-BodyAccelerationMagnitude-StdDev
+
+Column Name Description = The StdDev of the Gravity Acceleration Magnitude Time
+time-GravityAccelerationMagnitude-StdDev
+
+Column Name Description = The StdDev of the Body Acceleration Jerk Magnitude Time
+time-BodyAccelerationJerkMagnitude-StdDev
+
+Column Name Description = The StdDev of the Body Gyroscope Magnitude Time
+time-BodyGyroscopeMagnitude-StdDev
+
+Column Name Description = The StdDev of the Body Gyroscope Jerk Magnitude Time
+time-BodyGyroscopeJerkMagnitude-StdDev
+
+Column Name Description = The StdDev of the Body Acceleration Frequency
+freq-BodyAcceleration-StdDev-X
+freq-BodyAcceleration-StdDev-Y
+freq-BodyAcceleration-StdDev-Z
+
+Column Name Description = The StdDev of the Body Acceleration Jerk Frequency
+freq-BodyAccelerationJerk-StdDev-X
+freq-BodyAccelerationJerk-StdDev-Y
+freq-BodyAccelerationJerk-StdDev-Z
+
+Column Name Description = The StdDev of the Body Gyroscope Frequency
+freq-BodyGyroscope-StdDev-X
+freq-BodyGyroscope-StdDev-Y
+freq-BodyGyroscope-StdDev-Z
+
+Column Name Description = The StdDev of the Body Acceleration Magnitude Frequency
+freq-BodyAccelerationMagnitude-StdDev
+
+Column Name Description = The StdDev of the Body Acceleration Jerk Magnitude Frequency
+freq-BodyAccelerationJerkMagnitude-StdDev
+
+Column Name Description = The StdDev of the Body Gyroscope Magnitude Frequency
+freq-BodyGyroscopeMagnitude-StdDev
+
+Column Name Description = The StdDev of the Body Gyroscope Jerk Magnitude Frequency
+freq-BodyGyroscopeJerkMagnitude-StdDev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
