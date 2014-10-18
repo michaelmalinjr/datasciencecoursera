@@ -1,0 +1,128 @@
+---
+output: html_document
+---
+Reproducible Research Course Project 1
+==========================
+
+
+Load the activity.csv file
+```{r}
+library(dplyr)
+library(knitr)
+data = read.csv("activity.csv")
+
+```
+
+1) What is mean total number of steps taken per day?
+Histogram of the total number of steps taken each day:
+```{r}
+
+op = par(mfrow=c(1,1), mar=c(4,4,2,2))
+with(data, hist(steps, main="Total Steps per Day",col= rainbow(5))); op
+
+```
+
+Calculate and report the mean and median total number of steps taken per day
+```{r}
+
+summarise(data, mean = mean(steps, na.rm = TRUE))
+summarise(data, median = median(steps, na.rm = TRUE))
+
+```
+
+2) What is the average daily activity pattern?
+Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+
+```{r}
+
+groupby <- group_by(data, date)
+summarise(groupby, mean = mean(steps))
+
+```
+
+```{r}
+
+op = par(mfrow=c(1,1), mar=c(4,4,2,2))
+with(avgAll,{
+        plot(date, mean, type="n", main="Average Steps", xlab="Day of the Week", ylab="Mean")
+        lines(date,mean)
+})
+op
+
+```
+
+Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+```{r}
+
+groupBy3 <- group_by(data, date)
+avgAll2 = summarise(groupBy3, mean = mean(steps))
+max = max(avgAll2$mean, na.rm = TRUE); max
+
+```
+
+3) Imputing missing values
+
+Devise a strategy for filling in all of the missing values in the dataset. 
+```{r}
+
+avgAll3[is.na(avgAll3)] = 0
+
+```
+
+
+Make a histogram of the total number of steps taken each day  
+
+```{r}
+op = par(mfrow=c(2,1), mar=c(4,4,2,2))
+hist(avgAll2$mean,
+     main="With Missing Values",
+     xlab = "Average Steps",
+     col= rainbow(5))
+hist(avgAll3$mean,
+     main="Missing Values Replaced with 0",
+     xlab = "Average Steps",
+     col= rainbow(5))      
+op
+
+
+```
+
+
+4) Are there differences in activity patterns between weekdays and weekends?
+
+Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
+
+```{r}
+addWeekdays =
+mutate(avgAll3,
+      weekdays = ifelse(!weekdays(as.Date(avgAll3$date)) %in% c("Saturday", "Sunday"),"weekday","weekend"))
+
+filterWeekdays = filter(addWeekdays, weekdays == 'weekday')       
+filterWeekends = filter(addWeekdays, weekdays == 'weekend')
+
+weekdayDate = filterWeekdays$date
+weekendDate = filterWeekends$date
+
+weekdayMean = filterWeekdays$mean
+weekendMean = filterWeekends$mean
+
+```
+
+Make a panel plot containing a time series plot
+
+```{r}
+op = par(mfrow=c(2,1), mar=c(4,4,2,2))
+with(filterWeekdays, {        
+        plot(weekdayDate, weekdayMean, type="n", main="Weekdays", ylab="Mean", xlab="Day of the Week") 
+        lines(weekdayDate, weekdayMean)
+})
+with(filterWeekends, {        
+        plot(weekendDate, weekendMean, type="n", main="Weekends", ylab="Mean", xlab="Day of the Week") 
+        lines(weekendDate, weekendMean)
+}) 
+op
+
+```
+
+
+
