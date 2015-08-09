@@ -1,0 +1,140 @@
+---
+title: "BMI calculator"
+author: "Michael Malin Jr"
+date: "Saturday, August 08, 2015"
+output: html_document
+runtime: shiny
+---
+
+```{r echo = FALSE}
+bmiApp <- function(feet, inches, weight) {
+        require(shiny)
+        shinyApp(
+                ui = pageWithSidebar(
+                        # Application title
+                        headerPanel("Body Mass Index(BMI) calculator"),
+                        sidebarPanel(
+                                numericInput('feet', 'Feet', 5, min = 3, max = 7, step = 5),
+                                numericInput('inches', 'Inches', 5, min = 1, max = 12, step = 5),
+                                numericInput('weight', 'Weight', 150, min = 75, max = 300, step = 5),
+                                submitButton('Submit')
+                        ),
+                        mainPanel(
+                                h3('Results:'),                                
+                                h4('Your BMI is:'),
+                                verbatimTextOutput("inputValue"),                                
+                                h4('Weight Category:'),
+                                verbatimTextOutput("prediction")
+                                )
+                        ),                 
+               
+                server = function(input, output) {
+                        # BMI calculation
+                        bmi = function(feet, inches, weight){
+                                w = weight * 703
+                                h.Inches = (feet * 12) + inches
+                                h.square = h.Inches * h.Inches
+                                calc = w/h.square  
+                                print(calc)
+                        }
+                        bmi.pred = function(feet, inches, weight){
+                                        w = weight * 703
+                                        h.Inches = (feet * 12) + inches
+                                        h.square = h.Inches * h.Inches
+                                        calc = w/h.square
+                                        
+                                        if(calc <= 18.5){
+                                                print("Underweight")                        
+                                        } else if(calc >= 18.5 & calc <= 24.9){
+                                                print("Normal weight")                        
+                                        } else if(calc >= 25 & calc <= 29.9){
+                                                print("Overweight")                        
+                                        } else{
+                                                print("Obesity")}
+                                        
+                                }
+                        output$inputValue <- renderPrint({bmi(input$feet, input$inches, input$weight)})
+                        output$prediction <- renderPrint({bmi.pred(input$feet, input$inches, input$weight)})
+                }
+                
+        )        
+        
+}
+```
+
+## Body Mass Index(BMI) calculator
+
+This paper will show you how to calculate your BMI and your weight category with my bmiApp() function. 
+BMI is used to help you measure if you are underweight, normal weight, overweight, or obese
+based on your height and weight. 
+
+###### You can run the app with the following function:
+
+```{r echo = TRUE}
+bmiApp()
+```
+
+###### Below is the code for the user interface(ui), which controls how the app looks, and the server, which controls what the app does: 
+
+```{r echo = TRUE}
+bmiApp <- function(feet, inches, weight) {
+        require(shiny)
+        shinyApp(
+                ui = pageWithSidebar(
+                        # Application title
+                        headerPanel("Body Mass Index(BMI) calculator"),
+                        sidebarPanel(
+                                numericInput('feet', 'Feet', 5, min = 3, max = 7, step = 5),
+                                numericInput('inches', 'Inches', 5, min = 1, max = 12, step = 5),
+                                numericInput('weight', 'Weight', 150, min = 75, max = 300, step = 5),
+                                submitButton('Submit')
+                        ),
+                        mainPanel(
+                                h3('Results:'),                                
+                                h4('Your BMI is:'),
+                                verbatimTextOutput("inputValue"),                                
+                                h4('Weight Category:'),
+                                verbatimTextOutput("prediction")
+                                )
+                        ),                 
+               
+                server = function(input, output) {
+                        # BMI calculation
+                        bmi = function(feet, inches, weight){
+                                w = weight * 703
+                                h.Inches = (feet * 12) + inches
+                                h.square = h.Inches * h.Inches
+                                calc = w/h.square  
+                                print(calc)
+                        }
+                        bmi.pred = function(feet, inches, weight){
+                                        w = weight * 703
+                                        h.Inches = (feet * 12) + inches
+                                        h.square = h.Inches * h.Inches
+                                        calc = w/h.square
+                                        
+                                        if(calc <= 18.5){
+                                                print("Underweight")                        
+                                        } else if(calc >= 18.5 & calc <= 24.9){
+                                                print("Normal weight")                        
+                                        } else if(calc >= 25 & calc <= 29.9){
+                                                print("Overweight")                        
+                                        } else{
+                                                print("Obesity")}
+                                        
+                                }
+                        output$inputValue <- renderPrint({bmi(input$feet, input$inches, input$weight)})
+                        output$prediction <- renderPrint({bmi.pred(input$feet, input$inches, input$weight)})
+                }
+                
+        )        
+        
+}
+```
+
+
+#### References:
+
+1) http://www.whathealth.com/bmi/formula.html
+2) http://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm
+
